@@ -14,7 +14,7 @@ export class CourseService {
 //   private readonly BaseURI = 'http://localhost/MLCapiservices/api';
   private readonly BaseURI = 'http://localhost/api/v1.0';
 
-  Save(form:any) {
+  Create(form:any) {
     return this.http.post(this.BaseURI + '/api/v1.0/Courses', form);
   }
   GetAllCourses() {

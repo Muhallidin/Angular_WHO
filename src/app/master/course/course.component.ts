@@ -33,6 +33,31 @@ export class CourseComponent implements OnInit {
   dataCourse: any = []; 
   sourceCourse: Course[] = [];
   
+  OnCreate(form:NgForm)
+  {
+
+    this.service.Create(form).subscribe(
+      (res:any) => {
+        this.formModel.id = res
+      },
+      (err:any) =>{
+        if(err.status== 500)
+        {
+          this.toastr.error('Server Error','',
+          {
+            progressBar: true,
+            timeOut: 500,
+            progressAnimation: 'increasing'
+          });
+        }
+        else
+        {
+          console.log(err);
+        }
+      }
+    );
+  }
+
   GetCourse(id:any)
   {
  
