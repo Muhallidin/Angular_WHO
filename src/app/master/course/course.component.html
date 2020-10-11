@@ -1,0 +1,31 @@
+<p>course works!</p>
+
+<div class="container ">
+    <div  class="row">
+        
+        <div  class="col-12" >
+            <form #form='ngForm' autocomplete="off"  (submit)="onSubmit(form)">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <!-- ?  <span class="input-group-text"><i class="fas fa-key"></i></span> -->
+                        Course Code
+                    </div>
+                    <input type="text" class="form-control"   #CourseCode="ngModel"   name="CourseCode" [(ngModel)]="formModel.coursecode" >
+                </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                              Course 
+                          </div>
+                        <input type="text" class="form-control"  #Course="ngModel"    name="Course" [(ngModel)]="formModel.course" >
+                    </div>
+                     
+                      <div class="input-group form-group">
+						<input type="submit" value="Login" class="btn form-control float-right login_btn">
+                    </div>
+
+            </form>
+        </div>
+         
+    </div>
+</div>
